@@ -1,0 +1,4 @@
+IP=$1
+echo Checking Location of $IP
+curl -s -S http://freegeoip.net/json/$IP 
+#| jq -j '.city ',"   "'.region_code'
