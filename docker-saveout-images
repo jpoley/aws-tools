@@ -1,0 +1,3 @@
+docker images \
+| awk '(NR > 1) && ($2!~/none/) {docker save -o "gensub(/\//,"_","g",$1)"-"$2".docker "$1":"$2}' \
+| bash
