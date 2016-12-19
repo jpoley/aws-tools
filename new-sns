@@ -1,0 +1,4 @@
+: ${2?"Usage: $0 Sns-Topic Email"}
+AWS_TOPIC=$(aws sns create-topic --name $1 |jq -r ."TopicArn")
+aws sns subscribe --topic-arn $AWS_TOPIC --protocol email --notification-endpoint $2
+
