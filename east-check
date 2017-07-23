@@ -1,0 +1,1 @@
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,ImageId,InstanceType,KeyName,State.Name]' --region us-east-1 --output=text --profile $1
